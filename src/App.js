@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import calculate from './logic/calculate';
+import Display from './components/Display';
+import ButtonPanel from './components/ButtonPanel';
 
-function App() {
+// eslint-disable-next-line react/prefer-stateless-function
+const App = () => {
+  const [totals, setTotals] = useState({});
+  //const [output, setOutput]=useState('')
+  useEffect(() => {
+    setTotals({
+      total: null,
+      next: null,
+      operation: null,
+      output : null,
+    });
+  }, []);
+
+  const handleClick = (event) => {
+    setTotals(calculate(totals, event.target.textContent));
+  };
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="calculator-container">
+      <Display status={totals} />
+      <ButtonPanel grantParentHandleState={handleClick}/>
+      </div>
     </div>
   );
-}
-
+};
+ 
 export default App;

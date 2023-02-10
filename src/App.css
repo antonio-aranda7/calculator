@@ -1,38 +1,95 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.letsStyle {
   color: white;
+  font-size: 1.5rem;
+  padding-bottom: 2rem;
+  align-self: flex-start;
 }
 
-.App-link {
-  color: #61dafb;
+.calculator-container {
+  background: rgb(25, 52, 136);
+  background: -moz-linear-gradient(0deg, rgba(25, 52, 136, 1) 0%, rgba(146, 77, 168, 1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(25, 52, 136, 1) 0%, rgba(146, 77, 168, 1) 100%);
+  background: linear-gradient(0deg, rgba(25, 52, 136, 1) 0%, rgba(146, 77, 168, 1) 100%);
+  /* stylelint-disable-next-line */
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr="#193488", endColorstr="#924da8", GradientType=1);
+  color: white;
+  width: 30rem;
+  height: 30rem;
+  display: grid;
+  grid-template-rows: 1fr 4fr 1fr;
+  border-radius: 2rem;
+  box-shadow: 13px 13px 20px rgb(0, 0, 0);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.display {
+  display: flex;
+  background-color: transparent;
+  color: white;
+  font-size: 2.3rem;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 1.5rem;
+}
+
+.total {
+  justify-self: flex-end;
+}
+
+.hint {
+  font-size: 1.3rem;
+  align-self: flex-start;
+  padding: 1.4rem;
+  margin-right: auto;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.button-grid:nth-child(4n) {
+  background-color: #454ed4;
+}
+
+.bottom-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  border-radius: 2rem;
+}
+
+button {
+  border: 1px solid transparent;
+  background: transparent;
+  color: white;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+}
+
+.btn {
+  font-size: 1.3rem;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+.orange {
+  background-color: #454ed4;
+}
+
+.zero {
+  border-bottom-left-radius: 2rem;
+}
+
+.equals {
+  border-bottom-right-radius: 2rem;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .calculator-container {
+    max-width: 80vw;
+    max-height: 120vw;
   }
 }
