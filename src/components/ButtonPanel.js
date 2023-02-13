@@ -23,15 +23,17 @@ export default function ButtonPanel(props) {
           <CalcButton myFunc={grantParentHandleState} buttonName="2" buttonClasses="btn two" id="two" />
           <CalcButton myFunc={grantParentHandleState} buttonName="3" buttonClasses="btn three" id="three" />
           <CalcButton myFunc={grantParentHandleState} buttonName="+" buttonClasses="btn plus orange" id="add" />
-        </div>
+          </div>
         <div className="bottom-container">
-          <CalcButton myFunc={grantParentHandleState} buttonName="0" buttonClasses="btn zero" id="zero" />
+          <CalcButton myFunc={grantParentHandleState} buttonName="0" buttonClasses="btn zero" id="zero" /> 
           <CalcButton myFunc={grantParentHandleState} buttonName="." buttonClasses="btn decimal" id="decimal" />
+          <CalcButton myFunc={grantParentHandleState} buttonName="<-" buttonClasses="btn clear" id="clear" />
           <CalcButton myFunc={grantParentHandleState} buttonName="=" buttonClasses="btn equals orange" id="equals" />
-        </div>
-    </>
+        </div> 
+        </>
   );
 }
+/***/
 
 /*ButtonPanel.propTypes = {
   grantParentHandleState: PropTypes.func,

@@ -11,7 +11,7 @@ export default function Display(props) {
             {status.next}
           </span>
           <span className="total">
-            {status.next ?? status.total ?? 0}
+            {status.output/* ?? status.total?? 0   */}
           </span>
     </div>
   );
